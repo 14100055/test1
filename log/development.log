@@ -1,0 +1,62 @@
+
+
+Started GET "/assets/rails.png" for 221.120.220.12 at 2016-03-25 21:54:59 +0000
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (6ms)
+
+
+Started GET "/movies" for 221.120.220.12 at 2016-03-25 21:55:02 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (75.6ms)
+Compiled application.css  (0ms)  (pid 2060)
+Compiled jquery.js  (45ms)  (pid 2060)
+Compiled jquery_ujs.js  (0ms)  (pid 2060)
+Compiled application.js  (61ms)  (pid 2060)
+Completed 200 OK in 230.0ms (Views: 178.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 110.93.234.9 at 2016-03-25 21:55:04 +0000
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 221.120.220.12 at 2016-03-25 21:55:05 +0000
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 221.120.220.12 at 2016-03-25 21:55:05 +0000
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 221.120.220.12 at 2016-03-25 21:55:05 +0000
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 110.93.234.9 at 2016-03-25 21:55:53 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to https://test1-saadnismail.c9users.io/movies?ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 110.93.234.9 at 2016-03-25 21:55:55 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (1.7ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 12.8ms (Views: 9.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 110.93.234.9 at 2016-03-25 21:56:02 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to https://test1-saadnismail.c9users.io/movies?ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 110.93.234.9 at 2016-03-25 21:56:04 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG-13', 'R') ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 9.6ms (Views: 8.1ms | ActiveRecord: 0.3ms)
